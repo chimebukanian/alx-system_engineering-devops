@@ -1,22 +1,3 @@
-
-lroudge
-/
-holberton-system_engineering-devops
-Public
-Code
-Issues
-Pull requests
-1
-Actions
-Projects
-Wiki
-Security
-Insights
-holberton-system_engineering-devops/0x05-processes_and_signals/100-process_and_pid_file
-@lroudge
-lroudge Add advanced task 100
- 1 contributor
-Executable File  17 lines (16 sloc)  737 Bytes
 #!/usr/bin/env bash
 # Creates the file /var/run/holbertonscript.pid containing its PID
 # Displays 'To infinity and beyond' indefinitely
@@ -33,4 +14,4 @@ do
     trap 'echo "I hate the kill command"; sudo rm /var/run/holbertonscript.pid; exit' SIGTERM
     trap 'echo "Y U no love me?!"' SIGINT
     trap 'sudo rm /var/run/holbertonscript.pid; exit' SIGQUIT
-donec
+done
