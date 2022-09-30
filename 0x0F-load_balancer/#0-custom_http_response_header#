@@ -1,6 +1,0 @@
-,xc#!/usr/bin/env bash
-# a bash script to configure an nginx server headers
-apt update
-apt install -y nginx
-sed -i "s/sendfile on;/sendfile on;\n\tadd_header X-Served-By $HOSTNAME;/" /etc/nginx/nginx.conf
-service nginx restart
