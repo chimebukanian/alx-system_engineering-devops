@@ -1,0 +1,36 @@
+
+Many processes are involved from the point you hit enter on your keyboard to the point when you get the website content displayed on your screen.
+
+DNS
+
+When you type any website name, the computer does not understand the string of letters you have just typed. The name has to be converted to an IP address like 33.224.10.5 before you can get any response from your website. This is the first step and thanks to DNS we don’t have to memorize IP addresses to access a website. So DNS is a system of servers that contain IP addresses for websites. So when you type a website name and hit enter your browser first contacts a DNS server to resolve the domain name to its IP address. The web address you just typed is what is called a domain name. At this point, your browser now has the IP address of the website. What next?
+
+TCP/IP CONNECTION
+
+Before browsers begins sending or getting data from your website it must establish a way to communicate with the web server i.e establish a channel over which the data is sent/retrieved, hence, TCP/IP. virtually, every communication over the internet happens over TCP/IP. This is a suite of protocols. Here, a bunch of protocols is involved to establish this connection.
+
+This connection is established through a process known as the TCP three-way handshake. Your browser is the client and the server is where the website is hosted. The client sends a synchronization request to the server (SYN packet), and the server acknowledges receipt of that packet by responding with a SYN-ACK packet. Finally, the client sends an ACK packet back to the server to terminate the process. With this, a full TCP/IP connection is established between the client and the server. At this point we can now say that a path has been cleared, tarmacked and ready for the high speed sports cars.
+
+Firewall
+
+Communication over TCP can happen over different ports. Up to 65535 ports to be specific. For your device to communicate with the web server over TCP it requires doing so using a particular port number. So using these port numbers, the web server can communicate with your browser. For security purposes, most of these ports are normally closed. This work is done by the firewall that is set up on the server. The firewall determines which connection request over which port is allowed to reach the server. So its main function is to filter traffic to the server.
+
+Since your browser will use another protocol called HTTP or HTTPS(A secure version of the former) to send and retrieve website content, the firewall is configured to allow connections for ports 80 and 443, the port numbers for each respectively.
+
+HTTPS/SSL
+
+Hyper-Text Transfer Protocol (Secure) is a type of protocol used to transfer encrypted data over the internet. It’s counter-part HTTP transfers pure text (unencrypted). Secure Sockets Layer(SSL) is the technology used to encrypt the data between the client and the server.
+
+Enough with the technical jargon. Remember by default your browser is set to send HTTP requests over port 80. If the web server is configured to communicate over the secure counterpart HTTPS, then the server will redirect any HTTP port 80 connection request to HTTPS port 443 before serving your request. This ensures that nobody in the middle can intercept and read the data you are sharing between your browser and server.
+
+Load Balancer
+
+Imagine you are accessing a website that has only one server architecture and it has millions of people trying to access it at the same time. This server will be overwhelmed by requests from users and probably crash down. Here comes the load balancer that helps distribute the many requests to different servers. The load balancer stands in front of more than one web server and as requests come it is its job to determine which of the servers will serve the request. Different algorithms are used in the load balancer eg round-robin, which will, as its name suggest, go around distributing requests to the servers one by one.
+
+Web Server
+
+At this point, your request has gone past the load balancer and into the server. In this context, a web server is a software that serves web pages to the client. Examples of web servers include NGINX and APACHE. It is the role of this software to fetch whatever resource is in your request. For example, if you typed www.myonlineshop.com/items it will look for a file called ‘items’ in the root directory of the domain and deliver it to the browser. This software is normally configured to listen to any connection request from any IP address over port 80 or 443. (You now know why the two)At this point, your request has gone past the load balancer and into the server. In this context, a web server is a software that serves web pages to the client. Examples of web servers include NGINX and APACHE. It is the role of this software to fetch whatever resource is in your request. For example, if you typed www.myonlineshop.com/items it will look for a file called ‘items’ in the root directory of the domain and deliver it to the browser. This software is normally configured to listen to any connection request from any IP address over port 80 or 443. (You now know why the two)
+
+Application server
+
+The web server serves only static HTML files. These include images and pure textual data. The application server is responsible for performing some business logic on the data transferred to it and giving back the result to the web server. The application server, therefore, is involved in some form of data manipulation and generation. It is the role of the application server to either store data in a database or retrieve data from a database and send it to the web server to be sent back to the browser. The main difference between the web server and the application server is that with the application server there is some form of business logic being implemented at this stage.
