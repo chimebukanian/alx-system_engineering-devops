@@ -3,7 +3,7 @@
 server {
     listen 80;
     listen [::]:80 default_server;
-    add_header X-Served-By 1319-web-01;
+    add_header X-Served-By 6362-web-01;
     root   /etc/nginx/html;
     index  index.html index.htm;
     location /redirect_me {
